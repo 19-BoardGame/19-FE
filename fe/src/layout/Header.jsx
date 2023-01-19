@@ -5,9 +5,9 @@ export default function Header() {
         <img
           src="public_assets/titleIcon.png"
           alt="주사위 이미지"
-          width="32%"
+          width="30%"
         />
-        <p className="text-sky text-2xl mx-6">1-9 보드게임</p>
+        <p className="text-sky text-3xl ml-6">1-9 보드게임</p>
       </div>
       <ul className="inline-block text-center text-lg">
         <li className="float-left pr-16 border-r">
