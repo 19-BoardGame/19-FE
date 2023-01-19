@@ -35,7 +35,7 @@ export default function Login() {
   //     axios
   //       .post("/api/signin", {
   //         id: userid.current.value,
-  //         password: userid.current.value,
+  //         password: password.current.value,
   //       })
   //       .then((res) => {})
   //       .catch((err) => {
