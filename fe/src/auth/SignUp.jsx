@@ -18,6 +18,10 @@ export default function SingUp() {
       setErrorMessage("비밀번호를 입력해주세요.");
       password.current.focus();
       return;
+    } else if (password.current.value.length < 4) {
+      setErrorMessage("비밀번호는 4자리 이상 입력해주세요.");
+      password.current.focus();
+      return;
     } else if (repeatedPassword.current.value === "") {
       setErrorMessage("비밀번호 확인을 입력해주세요.");
       repeatedPassword.current.focus();
@@ -25,6 +29,10 @@ export default function SingUp() {
     } else if (userName.current.value === "") {
       setErrorMessage("닉네임을 입력해주세요.");
       userName.current.focus();
+      return;
+    } else if (password.current.value !== repeatedPassword.current.value) {
+      setErrorMessage("비밀번호가 일치하지 않습니다.");
+      repeatedPassword.current.focus();
       return;
     }
     console.log(userid.current.value);
@@ -43,6 +51,10 @@ export default function SingUp() {
   //       setErrorMessage("비밀번호를 입력해주세요.");
   //       password.current.focus();
   //       return;
+  //     } else if (password.current.value.length < 4) {
+  //       setErrorMessage("비밀번호는 4자리 이상 입력해주세요.");
+  //       password.current.focus();
+  //       return;
   //     } else if (repeatedPassword.current.value === "") {
   //       setErrorMessage("비밀번호 확인을 입력해주세요.");
   //       repeatedPassword.current.focus();
@@ -50,6 +62,10 @@ export default function SingUp() {
   //     } else if (userName.current.value === "") {
   //       setErrorMessage("닉네임을 입력해주세요.");
   //       userName.current.focus();
+  //       return;
+  //     } else if (password.current.value !== repeatedPassword.current.value) {
+  //       setErrorMessage("비밀번호가 일치하지 않습니다.");
+  //       repeatedPassword.current.focus();
   //       return;
   //     }
   //     axios
@@ -72,7 +88,7 @@ export default function SingUp() {
         <input className="relative mt-2 border border-border w-56 h-7 focus:outline-none text-sm px-3" type="password" placeholder="비밀번호" ref={password} />
         <input
           className="relative mt-2 border border-border w-56 h-7 focus:outline-none text-sm px-3"
-          type="text"
+          type="password"
           placeholder="비밀번호 확인"
           ref={repeatedPassword}
         />
