@@ -13,7 +13,7 @@ export default function Title() {
   };
 
   return (
-    <div>
+    <>
       <div className="flex flex-col items-center w-80 h-screen bg-neutral-300">
         <img className="relative top-12" src="public_assets/titleIcon.png" alt="주사위 이미지" width="70%" />
         <div className="relative top-24">
@@ -26,6 +26,6 @@ export default function Title() {
         </div>
       </div>
       <p className="absolute top-64 left-1/3 font-semibold text-9xl">Board Game Post!!</p>
-    </div>
+    </>
   );
 }
