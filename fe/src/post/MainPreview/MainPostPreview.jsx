@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 export default function MainPostPreview({ postType }) {
   const posts = [
     {
+      id: "a",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -13,6 +14,7 @@ export default function MainPostPreview({ postType }) {
       imgURL: null,
     },
     {
+      id: "b",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -22,6 +24,7 @@ export default function MainPostPreview({ postType }) {
         "https://w.namu.la/s/3028d8b5373d5934e09bacd37bc80fdf6ac067f68276eac28083dfd5bf49b578af3db1ccad489a35b2c8a1e0c87b548797d4f2b5f17178d29a7288e44a8d501b50c1298dcc55ecb0557e734a8ea014841b7ab671d13b828cacdcabbe86b73d18",
     },
     {
+      id: "c",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -30,6 +33,7 @@ export default function MainPostPreview({ postType }) {
       imgURL: null,
     },
     {
+      id: "d",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -38,6 +42,7 @@ export default function MainPostPreview({ postType }) {
       imgURL: null,
     },
     {
+      id: "e",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -46,6 +51,7 @@ export default function MainPostPreview({ postType }) {
       imgURL: null,
     },
     {
+      id: "f",
       title: "이거는 제목",
       writer: "writer1",
       likes: 7,
@@ -76,6 +82,7 @@ export default function MainPostPreview({ postType }) {
     return posts.map((post) => {
       return (
         <MainPostBox
+          key={post.id}
           title={post.title}
           writer={post.writer}
           likes={post.likes}

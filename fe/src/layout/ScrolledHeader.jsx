@@ -63,7 +63,7 @@ export default function ScrolledHeader() {
     <>
       <div
         className={classNames(
-          "fixed flex items-center w-full h-20 bg-title z-[9999]",
+          "fixed flex items-center w-full h-20 bg-title z-[9999] drop-shadow-default",
           {
             "-top-[80px]": !rendered,
             "animate-header top-0": scrolled,

@@ -20,17 +20,23 @@ export default function MainPostBox({
         <p className="font-bold">{title}</p>
         <div className="flex flex-row text-xs w-72">
           <span className="w-1/4">{writer}</span>
-          <span className="flex flex-row items-center w-1/4">
+          <span className="flex flex-row items-center w-1/5">
             <HiThumbUp />
             <p className="pl-1">{likes}</p>
           </span>
-          <span className="flex flex-row items-center w-1/4">
+          <span className="flex flex-row items-center w-1/5">
             <MdModeComment />
-            <p className="pl-1">{likes}</p>
+            <p className="pl-1">{comments}</p>
           </span>
-          <span className="flex flex-row items-center w-1/4">
+          <span className="flex flex-row items-center w-1/3">
             <AiTwotoneCalendar />
-            <p className="pl-1">{likes}</p>
+            <p className="pl-1">
+              {date.slice(2, 4) +
+                "-" +
+                date.slice(4, 6) +
+                "-" +
+                date.slice(6, 8)}
+            </p>
           </span>
         </div>
       </div>
