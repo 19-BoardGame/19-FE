@@ -3,14 +3,14 @@ import ScrolledHeader from "./ScrolledHeader";
 
 export default function Header() {
   return (
-    <div>
+    <header>
       <TopHeader />
       <ScrolledHeader />
-      <div className="h-96 bg-slate-500"></div>
-      <div className="h-96 bg-slate-500"></div>
-      <div className="h-96 bg-slate-500"></div>
-      <div className="h-96 bg-slate-500"></div>
-      <div className="h-96 bg-slate-500"></div>
-    </div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+    </header>
   );
 }
