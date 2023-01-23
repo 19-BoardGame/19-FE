@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import MainPostBox from "./MainPostBox";
 import { useDispatch } from "react-redux";
 
 export default function MainPostPreview({ postType }) {
-  const [title, setTitle] = useState("");
   const posts = [
     {
       title: "이거는 제목",
@@ -56,13 +54,12 @@ export default function MainPostPreview({ postType }) {
       imgURL: null,
     },
   ];
-
-  useEffect(() => {
-    if (postType === 0) setTitle("베스트 게시물");
-    else if (postType === 1) setTitle("게임 후기");
-    else if (postType === 2) setTitle("게임 모임");
-    else setTitle("자유게시판");
-  }, []);
+  const title = {
+    0: "베스트 게시물",
+    1: "게임 후기",
+    2: "게임 모임",
+    3: "자유게시판",
+  };
 
   const dispatch = useDispatch();
 
@@ -93,7 +90,7 @@ export default function MainPostPreview({ postType }) {
   return (
     <div className="relative ml-60 mb-24 w-7/12">
       <div className="flex flex-row justify-between my-3 border-b-2 border-black">
-        <p className="font-bold text-xl pl-4 pb-1">{title}</p>
+        <p className="font-bold text-xl pl-4 pb-1">{title[postType]}</p>
         {postType !== 0 ? (
           <span
             className="flex flex-row items-center text-xs text-slate-400 cursor-pointer"
