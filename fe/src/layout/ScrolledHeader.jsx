@@ -18,6 +18,7 @@ export default function ScrolledHeader() {
           setScrolled(true);
         } else {
           setScrolled(false);
+          setChoosing(false);
         }
       }, 200),
     []
