@@ -13,7 +13,7 @@ export default function ScrolledHeader() {
   const handleScroll = useMemo(
     () =>
       throttle(() => {
-        if (window.scrollY > 180) {
+        if (window.scrollY > 110) {
           setScrolled(true);
           setRendered(true);
         } else {
@@ -29,7 +29,7 @@ export default function ScrolledHeader() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   const main = () => {
     dispatch({ type: "main" });
@@ -62,11 +62,14 @@ export default function ScrolledHeader() {
   return (
     <>
       <div
-        className={classNames("fixed flex items-center w-full h-20 bg-title", {
-          "-top-[80px]": !rendered,
-          "animate-header": scrolled,
-          "animate-headerout -top-[80px]": !scrolled && rendered,
-        })}
+        className={classNames(
+          "fixed flex items-center w-full h-20 bg-title z-[9999]",
+          {
+            "-top-[80px]": !rendered,
+            "animate-header top-0": scrolled,
+            "animate-headerout -top-[80px]": !scrolled && rendered,
+          }
+        )}
         onClick={choosePostType}
       >
         <div className="flex flex-row justify-start items-center h-full mx-52 font-bold ">
@@ -78,22 +81,22 @@ export default function ScrolledHeader() {
             <IoIosArrowDown className="ml-8" />
           </span>
         </div>
+        {choosing ? (
+          <div className="overflow-hidden fixed text-center top-[80px] left-[502px] w-48 cursor-pointer bg-white">
+            <ul className="relative border-x animate-list">
+              <li className="py-2" onClick={reviewPost}>
+                게임 후기
+              </li>
+              <li className="py-2 border-y" onClick={partyPost}>
+                게임 모임
+              </li>
+              <li className="py-2 border-b" onClick={freePost}>
+                자유게시판
+              </li>
+            </ul>
+          </div>
+        ) : null}
       </div>
-      {choosing ? (
-        <div className="overflow-hidden fixed text-center top-[80px] left-[502px] w-48 cursor-pointer bg-white">
-          <ul className="relative border-x animate-list">
-            <li className="py-2" onClick={reviewPost}>
-              게임 후기
-            </li>
-            <li className="py-2 border-y" onClick={partyPost}>
-              게임 모임
-            </li>
-            <li className="py-2 border-b" onClick={freePost}>
-              자유게시판
-            </li>
-          </ul>
-        </div>
-      ) : null}
     </>
   );
 }

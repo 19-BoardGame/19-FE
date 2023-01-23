@@ -22,7 +22,7 @@ export default function TopHeader() {
   };
 
   return (
-    <div className="absolute flex flex-row justify-between w-full bg-white items-center px-52 py-5 font-bold">
+    <div className="flex flex-row justify-between w-full bg-white items-center px-52 py-5 font-bold">
       <div className="flex flex-row items-center cursor-pointer" onClick={main}>
         <img
           src="public_assets/titleIcon.png"
