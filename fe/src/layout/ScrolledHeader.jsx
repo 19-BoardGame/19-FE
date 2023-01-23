@@ -12,8 +12,6 @@ export default function ScrolledHeader() {
   const handleScroll = useMemo(
     () =>
       throttle(() => {
-        console.log(window.scrollY);
-        console.log(scrolled);
         if (window.scrollY > 180) {
           setScrolled(true);
         } else {
