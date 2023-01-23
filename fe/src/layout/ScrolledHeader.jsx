@@ -9,11 +9,13 @@ export default function ScrolledHeader() {
   const postType = useSelector((state) => state.type);
   const [choosing, setChoosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [rendered, setRendered] = useState(false);
   const handleScroll = useMemo(
     () =>
       throttle(() => {
         if (window.scrollY > 180) {
           setScrolled(true);
+          setRendered(true);
         } else {
           setScrolled(false);
           setChoosing(false);
@@ -61,8 +63,9 @@ export default function ScrolledHeader() {
     <>
       <div
         className={classNames("fixed flex items-center w-full h-20 bg-title", {
+          "-top-[80px]": !rendered,
           "animate-header": scrolled,
-          "animate-headerout -top-[80px]": !scrolled,
+          "animate-headerout -top-[80px]": !scrolled && rendered,
         })}
         onClick={choosePostType}
       >
