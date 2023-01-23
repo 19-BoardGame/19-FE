@@ -5,6 +5,11 @@ export default function Main() {
   return (
     <>
       <Header />
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
+      <div className="h-96"></div>
       <Footer />
     </>
   );
